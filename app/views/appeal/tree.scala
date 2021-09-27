@@ -207,6 +207,36 @@ object tree {
     )
   }
 
+  private def reportBanMenu(implicit ctx: Context): Branch = {
+    val accept = "I accept that I have sent frivolous reports to moderators."
+    val deny = "I deny having sent any frivolous reports to moderators."
+    Branch(
+      "root",
+      "Your account is restricted from reporting other users.",
+      List(
+        Leaf(
+          "reportban-accept",
+          accept,
+          frag(
+            sendUsAnAppeal,
+            newAppeal(accept)
+          )
+        ),
+        Leaf(
+          "reportban-deny",
+          deny,
+          frag(
+            sendUsAnAppeal,
+            newAppeal(deny)
+          )
+        )
+      ),
+      content = frag(
+        "We define this as sending excessive frivolous reports to moderators."
+      ).some
+    )
+  }
+
   private def playbanMenu(implicit ctx: Context): Branch = {
     Branch(
       "root",
@@ -284,6 +314,7 @@ object tree {
                 else if (me.marks.boost || query.contains("boost")) boostMenu
                 else if (me.marks.troll || query.contains("shadowban")) muteMenu
                 else if (me.marks.rankban || query.contains("rankban")) rankBanMenu
+                else if (me.marks.reportban || query.contains("reportban")) reportBanMenu
                 else cleanMenu
               },
               none
