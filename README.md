@@ -82,3 +82,8 @@ See [lichess.org/thanks](https://lichess.org/thanks) and the contributors here:
 ## Competence development program
 
 Lichess would like to support its contributors in their competence development by covering costs of relevant training materials and activities. This is a small way to further empower contributors who have given their time to Lichess and to enable or improve additional contributions to Lichess in the future. For more information, including how to apply, check [Competence Development for Lichess contributors](https://lichess.org/page/competence-development).
+
+## Generate the Lichess account on your instance
+
+Copy [this code](https://gist.github.com/BurraAbhishek/7b8cd31de00816adf525f00932646a11) somewhere, and then run it from your command-line interface.
+
