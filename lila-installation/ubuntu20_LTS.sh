@@ -1,5 +1,7 @@
 # Run this first and restart your terminal!
 # curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.2/install.sh | bash
+# Do NOT use sudo to run this. Just run this normally, and enter password when prompted
+# example: use: ./lila.sh, not sudo ./lila.sh if the file is called lila.sh
 home_directory=$HOME
 sudo apt update
 sudo apt install -y git
