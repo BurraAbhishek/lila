@@ -1,9 +1,10 @@
 # Run this first and restart your terminal!
 # curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.2/install.sh | bash
+home_directory=$HOME
 sudo apt update
 sudo apt install -y git
 curl -sL https://github.com/shyiko/jabba/raw/master/install.sh | bash && . ~/.jabba/jabba.sh
-cd
+cd $home_directory
 mkdir dev
 cd dev
 mkdir lichess
@@ -11,7 +12,7 @@ cd lichess
 git clone --recursive https://github.com/lichess-org/lila.git
 git clone --recursive https://github.com/lichess-org/lila-ws.git
 git clone --recursive https://github.com/lichess-org/lila-db-seed.git
-cd
+cd $home_directory
 jabba install openjdk@1.17.0
 sudo apt install -y python3-pip
 nvm install node
@@ -29,10 +30,11 @@ sudo dpkg -i libssl1.1_1.1.1f-1ubuntu2_amd64.deb
 sudo apt update
 sudo apt install -y mongodb-org
 sudo systemctl start mongod
+cd $home_directory
 cd dev
 cd lichess
 cd lila
 mongosh lichess bin/mongodb/indexes.js
 ./ui/build
 jabba use openjdk@1.17.0
-./lila
+./lila run
