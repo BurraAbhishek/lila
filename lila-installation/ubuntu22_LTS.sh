@@ -23,7 +23,10 @@ curl -fL https://github.com/coursier/launchers/raw/master/cs-x86_64-pc-linux.gz 
 chmod +x cs
 ./cs setup
 sudo apt install -y redis-server
-wget -qO - https://www.mongodb.org/static/pgp/server-6.0.asc | sudo apt-key add -
+wget -qO - https://www.mongodb.org/static/pgp/server-6.0.asc > ~/mongodb.key
+gpg --no-default-keyring --keyring ./mongodb_keyring.gpg --import mongodb.key
+gpg --no-default-keyring --keyring ./mongodb_keyring.gpg --export > ./mongodb.gpg
+sudo mv ./mongodb.gpg /etc/apt/trusted.gpg.d/
 echo "deb [ arch=amd64,arm64 ] https://repo.mongodb.org/apt/ubuntu focal/mongodb-org/6.0 multiverse" | sudo tee /etc/apt/sources.list.d/mongodb-org-6.0.list
 wget http://archive.ubuntu.com/ubuntu/pool/main/o/openssl/libssl1.1_1.1.1f-1ubuntu2_amd64.deb
 sudo dpkg -i libssl1.1_1.1.1f-1ubuntu2_amd64.deb
