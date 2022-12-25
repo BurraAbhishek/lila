@@ -23,7 +23,7 @@ jabba install openjdk@1.17.0
 sudo apt install -y python3-pip
 curl -fL https://github.com/coursier/launchers/raw/master/cs-x86_64-pc-linux.gz | gzip -d > cs
 chmod +x cs
-./cs setup
+./cs setup --yes
 sudo apt install -y redis-server
 wget -qO - https://www.mongodb.org/static/pgp/server-6.0.asc > ~/mongodb.key
 gpg --no-default-keyring --keyring ./mongodb_keyring.gpg --import mongodb.key
