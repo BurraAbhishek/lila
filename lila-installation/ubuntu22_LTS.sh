@@ -1,7 +1,9 @@
-# Run this first and restart your terminal!
-# curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.2/install.sh | bash
 # Do NOT use sudo to run this. Just run this normally, and enter password when prompted
 # example: use: ./lila.sh, not sudo ./lila.sh if the file is called lila.sh
+curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.3/install.sh | bash
+export NVM_DIR="$HOME/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"
+[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"
 home_directory=$HOME
 nvm install node
 npm i -g pnpm
