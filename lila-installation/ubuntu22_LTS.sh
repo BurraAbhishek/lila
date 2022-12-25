@@ -42,4 +42,5 @@ cd lila
 mongosh lichess bin/mongodb/indexes.js
 ./ui/build
 jabba use openjdk@1.17.0
-./lila run
+# ./lila run
+echo "Your development environment is almost ready! Restart your machine."
