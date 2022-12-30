@@ -86,3 +86,7 @@ See [lichess.org/thanks](https://lichess.org/thanks) and the contributors here:
 ## Competence development program
 
 Lichess would like to support its contributors in their competence development by covering costs of relevant training materials and activities. This is a small way to further empower contributors who have given their time to Lichess and to enable or improve additional contributions to Lichess in the future. For more information, including how to apply, check [Competence Development for Lichess contributors](https://lichess.org/page/competence-development).
+
+## Setup dev environment on Ubuntu 22.04 LTS
+
+[Refer to this gist](https://gist.github.com/BurraAbhishek/cae3e322eede9c70a24f859731152e0e)
